@@ -1,0 +1,16 @@
+class Solution(object):
+    def singleNumber(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        maps = {}
+        for num in nums:
+            if(num in maps):
+                maps[num]+=1
+            else:    
+                maps[num]=1    
+                
+        for value,freq in maps.items():
+            if(freq==1):
+                return value
